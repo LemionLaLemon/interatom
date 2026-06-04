@@ -1,0 +1,39 @@
+.secondaryHeader{
+    background: #125773;
+    background: linear-gradient(45deg, rgba(18, 87, 115, 1) 0%, rgba(61, 177, 255, 1) 100%);
+    padding: 3em 1.5em;
+    color: white;
+}
+
+.secondaryHeader h1{
+    font-size: 2em;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.content{
+    padding: 2em 1.5em;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.full{
+    width: 100%;
+    border: none;
+}
+
+.third{
+    width: 80%;
+    margin: auto;
+    display: block;
+    border: none;
+}
+
+@media (min-width: 1200px) {
+    .secondaryHeader h1,
+    .about {
+        max-width: 760px;
+    }
+}

@@ -1,0 +1,42 @@
+.cards{
+    width: min(95vw, 1200px);
+    margin: 2.5em auto 8em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 210px 210px;
+    gap: 0.5em 0.5em;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "featured featured up up"
+    "featured featured bottomLeft bottomRight";
+}
+
+.cards a{
+    text-decoration: none;
+}
+
+.cards > a:nth-child(1){
+    grid-area: featured;
+    background-color: #125773;
+}
+.cards > a:nth-child(2){
+    grid-area: up;
+    background-color: white;
+    color: black;
+}
+.cards > a:nth-child(3){
+    grid-area: bottomLeft;
+    background-color: white;
+    color: black;
+}
+.cards > a:nth-child(4){
+    grid-area: bottomRight;
+    background-color: white;
+    color: black;
+}
+@media (max-width: 700px) {
+    .cards{
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,114 @@
+.navbar{
+    height: 4em;
+    align-items: center;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    padding-left: 2em;
+    padding-right: 2em;
+    border-bottom: 1px solid #d2d2d2;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a{
+    color: #555555;
+    margin: 0.8em;
+    padding: 20px 0 20px 0;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.3s ease-out;
+}
+
+.navbar a:not(.home):hover{
+    color: #6a6aff;
+}
+
+.navbar .home{
+    display: flex;
+    flex-direction: column;
+    width: 4em;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-right: 2.2em !important;
+}
+
+.navbar .home span{
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+}
+
+.navbar .home img{
+    width: 3em;
+    margin-bottom: 5px;
+}
+
+.navbar .hamburger{
+    height: 3em;
+    width: 3em;
+    margin-left: auto !important;
+}
+
+.mobilemenupanel{
+    width: 100%;
+    max-height: 0;
+    background: linear-gradient(180deg, rgba(14, 124, 168, 0.96) 0%, rgba(18, 87, 115, 0.96) 100%);
+    box-sizing: border-box;
+    padding: 0 2em;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: max-height 0.32s ease, opacity 0.2s ease, padding 0.32s ease;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button.hamburger{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mobilemenupanel.isOpen {
+    display: flex;
+    max-height: 40vh;
+    padding: 1em 2em;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobilemenupanel ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+    transform: translateY(-8px);
+    transition: transform 0.32s ease;
+}
+
+.mobilemenupanel.isOpen ul{
+    transform: translateY(0);
+}
+
+.mobilemenupanel a{
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+}
+
+.mobilemenupanel a:hover{
+    color: #d8f1ff;
+}
+
+@media screen and (max-width: 700px) {
+    .navitem{
+        display: none;
+    }
+}
