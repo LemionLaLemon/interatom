@@ -7,6 +7,7 @@ import Sustainability from "./pages/sustainability";
 import Safety from "./pages/safety";
 import News from "./pages/news";
 import ArticlePage from "./pages/ArticlePage"
+import Library from "./pages/library"
 import Page404 from "./pages/404";
 import NavBar from "./components/NavBar";
 import Cookies from "./components/Cookies";
@@ -17,10 +18,13 @@ export default function App() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  const subdomain = window.location.hostname.split('.')[0];
+  const isDss = window.location.hostname.split('.')[0] === 'dss' || window.location.pathname.startsWith('/library');
+
   return (
     <>
-      <NavBar>
-      </NavBar>
+      {!isDss && <NavBar/>}
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -28,15 +32,13 @@ export default function App() {
         <Route path="/sustainability" element={<Sustainability />} />
         <Route path="/safety" element={<Safety />} />
         <Route path="/news" element={<News />} />
+        <Route path="/library" element={<Library />}/>
         <Route path="/news/:url" element={<ArticlePage />}/>
         <Route path="*" element={<Page404 />} />
       </Routes>
 
-      <Footer>
-      </Footer>
-
-      <Cookies>
-      </Cookies>
+      {!isDss && <Footer/>}
+      {!isDss && <Cookies/>}
     </>
   );
 };
