@@ -1,0 +1,256 @@
+.wss {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    text-rendering: optimizeSpeed;
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+    background-color: #DFE8F6;
+}
+
+.container {  
+    display: grid;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    padding: 3px 5px 5px;
+    grid-template-columns: minmax(200px, 0.3fr) 1fr;
+    grid-template-rows: 30px 1fr 30px;
+    gap: 0px 5px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "DSS Actions"
+    "Folders FolderContent"
+    "Folders PageControls";
+    z-index: 1;
+    flex: 1;
+    min-height: 0;
+}
+
+.tabs::before{
+    content: '';
+    background-image: url('../../../public/images/hexagon_tile.png');
+    position: absolute;
+    top: 0;
+    right: 900px;
+    height: 60px;
+    width: calc(100% - 900px);
+    background-position: right top;
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.tabs {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    height: 60px;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: row;
+    gap: 2px;
+    align-items: flex-end;
+    border-bottom: 1px solid #8DB2E3;
+    background-color: #ffffff;
+    background-image: url('../../../public/images/banner2.png');
+    background-position: right top;
+    background-repeat: no-repeat;
+    padding: 0px 5px 0px 2px;
+    user-select: none;
+    position: relative;
+}
+
+.tab {
+    background: #CCDEF6;
+    background: linear-gradient(180deg, rgba(204, 222, 246, 1) 0%, rgba(222, 236, 253, 1) 100%);
+    height: fit-content;
+    padding: 3px 8px;
+    color: #1641B4;
+    border: 1px solid #8DB2E3;
+    font-size: 14px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    bottom: -1px;
+    z-index: 2;
+}
+
+.tab.selected {
+    background: #ffffff;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(223, 232, 246, 1) 100%);
+    font-weight: bold;
+    border: 1px solid #8DB2E3;
+    border-bottom: 1px solid #DFE8F6;
+    z-index: 3;
+}
+
+.DSS { 
+    grid-area: DSS; 
+    border: 1px solid #99BBE8;
+    border-bottom: none;
+    background: #D8E6F6;
+    background: linear-gradient(180deg,rgba(216, 230, 246, 1) 0%, rgba(216, 230, 246, 1) 48%, rgba(171, 199, 236, 1) 49%, rgba(171, 199, 236, 1) 54%, rgba(184, 207, 238, 1) 60%, rgba(203, 221, 243, 1) 100%);
+    align-content: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 8px;
+    line-height: 1;
+    user-select: none;
+}
+
+.collapse{
+    width: 16px;
+    height: 16px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #edf0f2;
+    background: linear-gradient(180deg,rgba(237, 240, 242, 1) 0%, rgba(237, 240, 242, 1) 48%, rgba(184, 207, 238, 1) 49%, rgba(184, 207, 238, 1) 54%, rgba(200, 213, 232, 1) 60%, rgba(200, 213, 232, 1) 100%);
+    border-radius: 3px;
+    border: 1px solid #99BBE8;
+}
+.collapse img{
+    display: block;
+    width: 14px;
+    height: 14px;
+}
+
+.DSS span{
+    color: #1641B4;
+    font-weight: bold;
+}
+
+.Actions { 
+    grid-area: Actions;
+    background: #D8E6F6;
+    background: linear-gradient(180deg,rgba(216, 230, 246, 1),rgba(203, 221, 243, 1) 100%);
+    border: 1px solid #99BBE8;
+    border-bottom: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.action{
+    background-color: #00000000;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+.action img{
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+.FolderContent { 
+    grid-area: FolderContent; 
+    background-color: #ffffff;
+    border: 1px solid #99BBE8;
+    border-bottom: none;
+    overflow-y: scroll;
+    min-height: 0;
+    box-sizing: border-box;
+}
+
+.FolderContent input[type=checkbox]{
+    width: 10px;
+    height: 10px;
+    display: block;
+}
+
+.FolderContent table{
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+}
+
+.FolderContent tr, thead{
+    height: 20px;
+    max-height: 20px;
+    box-sizing: border-box;
+    font-size: 11px;
+}
+
+.FolderContent th {
+    background: #F9F9F9;
+    background: linear-gradient(180deg, rgba(249, 249, 249, 1) 0%, rgba(249, 249, 249, 1) 48%, rgba(228, 229, 231, 1) 49%, rgba(228, 229, 231, 1) 100%);
+    box-shadow: 0px 1px 2px #D0D0D0;
+    font-weight: normal;
+    text-align: left;
+    padding: 0px;
+    line-height: 1;
+    height: 20px;
+    max-height: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+}
+
+.FolderContent th:nth-child(1),th:nth-child(2) {
+    padding: 0px !important;
+    width: 20px;
+}
+
+.FolderContent th:nth-child(3),th:nth-child(5),th:nth-child(6) {
+    width: 90px;
+}
+
+.FolderContent th:nth-child(7) {
+    width: 50px;
+}
+
+.FolderContent tbody tr{
+    border-bottom: 1px solid #D0D0D0;
+}
+
+.FolderContent th span{
+    margin-left: 5px;
+    display: block;
+    color: #416AAD;
+}
+
+.FolderContent td span{
+    margin-left: 5px;
+    display: block;
+}
+
+.Folders { 
+    grid-area: Folders; 
+    background-color: #ffffff;
+    border: 1px solid #99BBE8;
+}
+
+.PageControls { 
+    grid-area: PageControls; 
+    background: #D8E6F6;
+    background: linear-gradient(180deg,rgba(216, 230, 246, 1),rgba(203, 221, 243, 1) 100%);
+    border: 1px solid #99BBE8;
+    font-size: 12px;
+    align-content: center;
+    justify-content: center;
+}
+
+.PageControls button img{
+    width: 14px;
+    height: 14px;
+}
+
+.PageControls button{
+    background-color: #00000000;
+    border: none;
+    cursor: pointer;
+}
