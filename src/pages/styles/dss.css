@@ -235,6 +235,10 @@
 }
 
 .PageControls { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     grid-area: PageControls; 
     background: #D8E6F6;
     background: linear-gradient(180deg,rgba(216, 230, 246, 1),rgba(203, 221, 243, 1) 100%);
@@ -244,13 +248,46 @@
     justify-content: center;
 }
 
+.pagination {
+    display: flex;
+    align-items: center;
+}
+
 .PageControls button img{
     width: 14px;
     height: 14px;
+    display: block;
 }
 
 .PageControls button{
     background-color: #00000000;
     border: none;
     cursor: pointer;
+    margin: 0;
+}
+
+.PageControls .pageselection{
+    float: right;
+    margin-right: 10px;
+    margin-left: auto;
+}
+
+.tree-node {
+    height: 18px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    font-size: 11px;
+}
+
+.tree-toggle {
+    width: 16px;
+    height: 16px;
+    margin-right: 2px;
+}
+
+.tree-folder-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
 }
