@@ -1,0 +1,107 @@
+{
+    "Vogataya Generating Station": {
+        "kind": "folder",
+        "children": {
+            "Operations": {
+                "kind": "folder",
+                "children": {
+                    "SOP-REAC-OPS-1": {
+                        "description": "Standard Operating Procedure for Reactor Startup",
+                        "kind": "file",
+                        "type": "pdf",
+                        "dateAdded": "24-04-2026"
+                    }
+                }
+            },
+            "Drafts": {
+                "kind": "folder",
+                "children": {
+                    "FSARs": {
+                        "kind": "folder",
+                        "children": {
+                            "VGS-FSAR-Chapter-1-Amendment-59-Rev-001": {
+                                "description": "Vogataya Generating Station Final Safety Analysis Report Chapter 1 Draft",
+                                "kind": "file",
+                                "type": "pdf",
+                                "dateAdded": "24-04-2026"
+                            }
+                        }
+                    }
+                }
+            },
+            "FSARs": {
+                "kind": "folder",
+                "children": {
+                    "VGS-FSAR-Chapter-1-Amendment-59-Rev-002": {
+                        "description": "Vogataya Generating Station Final Safety Analysis Report Chapter 1",
+                        "kind": "file",
+                        "type": "pdf",
+                        "dateAdded": "24-04-2026"
+                    },
+                    "VGS-FSAR-Chapter-2-Amendment-59-Rev-001": {
+                        "description": "Vogataya Generating Station Final Safety Analysis Report Chapter 2",
+                        "kind": "file",
+                        "type": "pdf",
+                        "dateAdded": "24-04-2026"
+                    }
+                }
+            },
+            "Posters": {
+                "kind": "folder",
+                "children": {
+                    "peerreview": {
+                        "kind": "file",
+                        "type": "png",
+                        "dateAdded": "24-04-2026"
+                    },
+                    "PPE": {
+                        "kind": "file",
+                        "type": "png",
+                        "dateAdded": "24-04-2026"
+                    },
+                    "StopThinkActReview": {
+                        "kind": "file",
+                        "type": "png",
+                        "dateAdded": "24-04-2026"
+                    },
+                    "threewaycommunication": {
+                        "kind": "file",
+                        "type": "png",
+                        "dateAdded": "24-04-2026"
+                    },
+                    "trespassing": {
+                        "kind": "file",
+                        "type": "png",
+                        "dateAdded": "24-04-2026"
+                    }
+                }
+            },
+            "Communications": {
+                "kind": "folder",
+                "children": {
+                    "Request for Rediscussion of 10 CFR 50.54": {
+                        "description": "Communication from Vogataya to NRC requesting rediscussion of 10 CFR 50.54",
+                        "kind": "file",
+                        "type": "pdf",
+                        "dateAdded": "09-05-2026"
+                    }
+                }
+            },
+            "Notes": {
+                "kind": "folder",
+                "children": {
+                    "4b7t0m4" : {
+                        "description": "Notes for Rediscussion of 10 CFR 50.54",
+                        "kind": "file",
+                        "type": "txt",
+                        "dateAdded": "09-05-2026"
+                    }
+                }
+            }
+        }
+    },
+    "Sawtooth Energy Center": {
+        "kind": "folder",
+        "children": {}
+    }
+}

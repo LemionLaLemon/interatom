@@ -1,219 +1,111 @@
 import { Helmet } from "react-helmet-async";
-import { useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useReactTable, getCoreRowModel, getPaginationRowModel, getFilteredRowModel, flexRender, getSortedRowModel } from "@tanstack/react-table";
 import styles from "./styles/dss.css"
-
-const data = [
-  {
-    id: '1',
-    title: 'Spreadsheet',
-    description: 'Random spreadsheet having something to do with accounting i assume, do we even have that department?',
-    dateAdded: '10/14/2011 15:10PM EDT',
-    documentDate: '10/05/2011',
-    size: '15.4 Kb',
-  },
-  {
-    id: '2',
-    title: 'Project Plan',
-    description: 'Gantt chart and milestones for Q3 product rollout.',
-    dateAdded: '03/12/2020 09:22AM PDT',
-    documentDate: '03/10/2020',
-    size: '248 Kb',
-  },
-  {
-    id: '3',
-    title: 'Meeting Notes',
-    description: 'Notes from stakeholder sync — decisions and action items.',
-    dateAdded: '06/05/2021 11:05AM EDT',
-    documentDate: '06/04/2021',
-    size: '12 Kb',
-  },
-  {
-    id: '4',
-    title: 'Sales Report',
-    description: 'Monthly sales figures with regional breakdowns.',
-    dateAdded: '01/02/2019 08:45AM CST',
-    documentDate: '12/31/2018',
-    size: '1.2 Mb',
-  },
-  {
-    id: '5',
-    title: 'Invoice #4581',
-    description: 'Vendor invoice for office supplies — approved for payment.',
-    dateAdded: '07/18/2022 14:30PM MDT',
-    documentDate: '07/15/2022',
-    size: '98 Kb',
-  },
-  {
-    id: '6',
-    title: 'Design Mockups',
-    description: 'Low-fidelity wireframes for login and onboarding flows.',
-    dateAdded: '11/23/2023 16:12PM PST',
-    documentDate: '11/20/2023',
-    size: '3.8 Mb',
-  },
-  {
-    id: '7',
-    title: 'Contract Draft',
-    description: 'Initial draft of consulting agreement with redlines.',
-    dateAdded: '05/30/2018 10:00AM EDT',
-    documentDate: '05/29/2018',
-    size: '64 Kb',
-  },
-  {
-    id: '8',
-    title: 'Research Summary',
-    description: 'Summary of user interviews and primary insights.',
-    dateAdded: '02/14/2024 13:50PM GMT',
-    documentDate: '02/10/2024',
-    size: '45 Kb',
-  },
-  {
-    id: '9',
-    title: 'Budget Overview',
-    description: 'Annual budget with expense categories and forecasts.',
-    dateAdded: '09/01/2020 07:40AM EDT',
-    documentDate: '08/28/2020',
-    size: '520 Kb',
-  },
-  {
-    id: '10',
-    title: 'Onboarding Guide',
-    description: 'Step-by-step onboarding checklist for new hires.',
-    dateAdded: '04/11/2017 12:05PM PDT',
-    documentDate: '04/10/2017',
-    size: '76 Kb',
-  },
-  {
-    id: '11',
-    title: 'Press Release',
-    description: 'Announcement for product launch and key messaging.',
-    dateAdded: '10/20/2021 09:00AM EDT',
-    documentDate: '10/19/2021',
-    size: '22 Kb',
-  },
-  {
-    id: '12',
-    title: 'User Persona',
-    description: 'Primary persona profiles for target market segments.',
-    dateAdded: '08/07/2019 15:15PM CDT',
-    documentDate: '08/01/2019',
-    size: '31 Kb',
-  },
-  {
-    id: '13',
-    title: 'Roadmap',
-    description: 'Product roadmap with quarterly goals and KPIs.',
-    dateAdded: '12/31/2022 17:45PM EST',
-    documentDate: '12/30/2022',
-    size: '410 Kb',
-  },
-  {
-    id: '14',
-    title: 'Technical Spec',
-    description: 'API endpoints, data models, and authentication details.',
-    dateAdded: '06/21/2023 10:30AM PST',
-    documentDate: '06/20/2023',
-    size: '128 Kb',
-  },
-  {
-    id: '15',
-    title: 'Marketing Assets',
-    description: 'Collection of banners, logos, and brand guidelines.',
-    dateAdded: '03/03/2016 14:00PM GMT',
-    documentDate: '02/28/2016',
-    size: '9.6 Mb',
-  },
-  {
-    id: '16',
-    title: 'Compliance Checklist',
-    description: 'Regulatory requirements and audit preparation steps.',
-    dateAdded: '07/07/2025 08:10AM EDT',
-    documentDate: '07/01/2025',
-    size: '27 Kb',
-  },
-  {
-    id: '17',
-    title: 'Prototype Video',
-    description: 'Screen recording of feature prototype walkthrough.',
-    dateAdded: '05/19/2024 19:22PM PDT',
-    documentDate: '05/18/2024',
-    size: '42.7 Mb',
-  },
-  {
-    id: '18',
-    title: 'Customer Feedback',
-    description: 'Aggregated NPS comments and categorized suggestions.',
-    dateAdded: '11/05/2022 11:11AM CST',
-    documentDate: '11/01/2022',
-    size: '18 Kb',
-  },
-  {
-    id: '19',
-    title: 'Training Slides',
-    description: 'Slide deck for quarterly training session.',
-    dateAdded: '02/28/2015 09:30AM EST',
-    documentDate: '02/20/2015',
-    size: '4.2 Mb',
-  },
-  {
-    id: '20',
-    title: 'Legal Memo',
-    description: 'Legal analysis on data retention policy options.',
-    dateAdded: '01/15/2026 13:00PM GMT',
-    documentDate: '01/10/2026',
-    size: '56 Kb',
-  },
-];
+import LibraryTable from "./components/librarytable";
+import Pagination from "./components/pagination";
+import FolderView from "./components/folderview";
 
 const columns = [
-    {
-        id: 'checkbox',
-        header: () => <input type="checkbox"/>,
-        cell: () => <input type="checkbox"/>,
-        size: 20,
-        enableResizing: false,
-        enableSorting: false,
-    },
-    {
-        id: 'icon',
-        header:  '',
-        cell: '',
-        size: 20,
-        enableResizing: false,
-        enableSorting: false,
-    },
-    {
-        accessorKey: 'title',
-        header: 'Document Title',
-        size: 90,
-    },
-    {
-        accessorKey: 'description',
-        header: 'Document Description',
-        size: 200,
-    },
-    {
-        accessorKey: 'dateAdded',
-        header: 'Date Added',
-        size: 90,
-    },
-    {
-        accessorKey: 'documentDate',
-        header: 'Document Date',
-        size: 90,
-    },
-    {
-        accessorKey: 'size',
-        header: 'Size',
-        size: 50,
-    },
-]
+        {
+            id: 'checkbox',
+            header: "",
+            cell: () => null,
+            size: 20,
+            enableResizing: false,
+            enableSorting: false,
+        },
+        {
+            id: 'icon',
+            header:  '',
+            cell: '',
+            size: 20,
+            enableResizing: false,
+            enableSorting: false,
+        },
+        {
+            accessorKey: 'title',
+            header: 'Document Title',
+            size: 90,
+        },
+        {
+            accessorKey: 'description',
+            header: 'Document Description',
+            size: 200,
+        },
+        {
+            accessorKey: 'dateAdded',
+            header: 'Date Added',
+            size: 90,
+        },
+        {
+            accessorKey: 'documentDate',
+            header: 'Document Date',
+            size: 90,
+        },
+        {
+            accessorKey: 'size',
+            header: 'Size',
+            size: 50,
+        },
+    ]
 
 export default function Page() {
     const [activeTab, setActiveTab] = useState('folder');
     const [columnSizing, setColumnSizing] = useState({});
     const [sorting, setSorting] = useState([]);
+    const [dragMode, setDragMode] = useState(null);
+    const [rowSelection, setRowSelection] = useState({});
+    const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+    const [selectedFolder, setSelectedFolder] = useState([]);
+    const [documents, setDocuments] = useState(null);
+
+    const data = useMemo(
+        () => documents ? getFolderContents(documents, selectedFolder) : [],
+        [documents, selectedFolder]
+    )
+
+    function getFolderContents(tree, path) {
+        let current = tree;
+
+        for (const folder of path) {
+            current = current?.[folder]?.children;
+
+            if (!current) return [];
+        }
+
+        return Object.entries(current)
+        .filter(([_, item]) => item.kind === "file")
+        .map(([name, item]) => ({
+            title: name,
+            path: [...path, name],
+            kind: item.kind,
+            description: item.description ?? "",
+            dateAdded: item.dateAdded ?? "",
+            documentDate: item.documentDate ?? "",
+            size: item.size ?? "",
+            type: item.type ?? "",
+        }));
+    }
+
+    function openSelected() {
+        table.getSelectedRowModel().rows.forEach(row => {
+            const file = row.original;
+            const url = "/library/documents/" + file.path.join("/") + "." + file.type;
+            window.open(url, "_blank");
+        })
+    }
+
+    function downloadSelected() {
+        table.getSelectedRowModel().rows.forEach(row => {
+            const file = row.original;
+
+            const a = document.createElement("a");
+            a.href = "/library/documents/" + file.path.join("/") + "." + file.type;
+            a.download = file.title + "." + file.type;
+            a.click();
+        })
+    }
 
     const table = useReactTable({
         data,
@@ -221,7 +113,9 @@ export default function Page() {
         state: {
             columnSizing,
             sorting,
+            rowSelection
         },
+        onRowSelectionChange: setRowSelection,
         onColumnSizingChange: setColumnSizing,
         onSortingChange: setSorting,
         getCoreRowModel: getCoreRowModel(),
@@ -236,6 +130,20 @@ export default function Page() {
     const pageCount = table.getPageCount();
     const startRow = pageIndex * pageSize + 1;
     const endRow = Math.min((pageIndex + 1) * pageSize, totalRows);
+
+    useEffect(() => {
+        const stopDragging = () => setDragMode(null);
+
+        window.addEventListener("mouseup", stopDragging);
+
+        fetch("/library/documents.json")
+        .then(r => r.json())
+        .then(setDocuments)
+
+        return () => {
+            window.removeEventListener("mouseup", stopDragging);
+        };
+    }, []);
 
     return(
         <>
@@ -254,20 +162,35 @@ export default function Page() {
                         <span>Advanced Search</span>
                     </button>
                 </div>
-                <div className="container">
-                    <div className="DSS">
-                        <span>DSS Library</span>
-                        <button className="collapse">
-                            <img src="/images/collapse-icon.png"/>
-                        </button>
-                    </div>
-                    <div className="Folders"></div>
+                <div className={`container ${sidebarCollapsed ? 'collapsed' : ''}`}>
+                    {!sidebarCollapsed ? 
+                        <>
+                            <div className="DSS">
+                                <span>DSS Library</span>
+                                <button className="collapse" onClick={() => setSidebarCollapsed(prev => !prev)}>
+                                    <img src="/images/collapse-icon.png"/>
+                                </button>
+                            </div>
+                            <div className="Folders">
+                                <div className={activeTab === "folder" ? "" : "hidden"}>
+                                    <FolderView setRowSelection={setRowSelection} documents={documents} selectedFolder={selectedFolder} setSelectedFolder={setSelectedFolder} />
+                                </div>
+                            </div>
+                        </>
+                        :
+                        <div className="dss-folders-collapsed">
+                            <button className="collapse" onClick={() => setSidebarCollapsed(prev => !prev)}>
+                                <img src="/images/uncollapse-icon.png"/>
+                            </button>
+                        </div>
+                    }
+                    
                     <div className="Actions">
-                        <button className="action">
+                        <button className="action" onClick={openSelected}>
                             <img src="/images/Open.png"/>
                             <span>Open</span>
                         </button>
-                        <button className="action">
+                        <button className="action" onClick={downloadSelected}>
                             <img src="/images/Download.png"/>
                             <span>Download</span>
                         </button>
@@ -277,103 +200,10 @@ export default function Page() {
                         </button>
                     </div>
                     <div className="FolderContent">
-                        <div className="tableWrapper">
-                            <table>
-                                <thead>
-                                    {table.getHeaderGroups().map((headerGroup) => (
-                                        <tr key={headerGroup.id}>
-                                            {headerGroup.headers.map((header) => (
-                                                <th
-                                                    key={header.id}
-                                                    style={{
-                                                        width: header.getSize(),
-                                                        position: 'relative',
-                                                        cursor: header.column.columnDef.enableSorting !== false ? 'pointer' : 'default',
-                                                    }}
-                                                    onClick={header.column.columnDef.enableSorting !== false ? header.column.getToggleSortingHandler() : undefined}
-                                                >
-                                                    <div style={{ display: 'flex', alignItems: 'center' }}>
-                                                        {header.isPlaceholder
-                                                            ? null
-                                                            : flexRender(header.column.columnDef.header, header.getContext())}
-                                                        {header.column.columnDef.enableSorting !== false && (
-                                                            <span style={{ marginLeft: '4px' }}>
-                                                                {header.column.getIsSorted() === 'asc' ? ' ↑' : header.column.getIsSorted() === 'desc' ? ' ↓' : ''}
-                                                            </span>
-                                                        )}
-                                                    </div>
-
-                                                    {header.column.columnDef.enableResizing !== false && (
-                                                        <div
-                                                            onMouseDown={header.getResizeHandler()}
-                                                            onTouchStart={header.getResizeHandler()}
-                                                            className="resizeHandle"
-                                                        />
-                                                    )}
-                                                </th>
-                                            ))}
-                                        </tr>
-                                    ))}
-                                </thead>
-                                <tbody>
-                                    {table.getRowModel().rows.map((row) => (
-                                        <tr key={row.id}>
-                                            {row.getVisibleCells().map((cell) => (
-                                                <td
-                                                    key={cell.id}
-                                                    style={{
-                                                        width: cell.column.columnDef.size,
-                                                    }}
-                                                >
-                                                    <span>{flexRender(cell.column.columnDef.cell, cell.getContext())}</span>
-                                                </td>
-                                            ))}
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
+                        <LibraryTable documents={documents} table={table} dragMode={dragMode} setDragMode={setDragMode} />
                     </div>
                     <div className="PageControls">
-                        <div className="pagination">
-                            <button onClick={() => table.setPageIndex(0)} disabled={!table.getCanPreviousPage()}>
-                                <img src="/images/skipstart.png"/>
-                            </button>
-                            <button onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>
-                                <img src="/images/previous.png"/>
-                            </button>
-                            <span>
-                                Page <input 
-                                    type="number" 
-                                    min="1" 
-                                    max={pageCount}
-                                    value={pageIndex + 1}
-                                    onChange={(e) => table.setPageIndex(Number(e.target.value) - 1)}
-                                    style={{ width: '40px' }}
-                                /> of {pageCount}
-                            </span>
-                            <button onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>
-                                <img src="/images/next.png"/>
-                            </button>
-                            <button onClick={() => table.setPageIndex(pageCount - 1)} disabled={!table.getCanNextPage()}>
-                                <img src="/images/skipend.png"/>
-                            </button>
-                            <span>
-                                Displaying 
-                                <select
-                                    value={pageSize}
-                                    onChange={(e) => table.setPageSize(Number(e.target.value))}
-                                    style={{ margin: '0 4px' }}
-                                >
-                                    {[10, 20, 50, 100].map((size) => (
-                                        <option key={size} value={size}>
-                                            {size}
-                                        </option>
-                                    ))}
-                                </select>
-                                items per page of {totalRows} total
-                            </span>
-                        </div>
+                        <Pagination table={table}/> 
                     </div>
                 </div>
             </div>
