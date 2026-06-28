@@ -1,60 +1,111 @@
 import { Helmet } from "react-helmet-async";
-import { useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useReactTable, getCoreRowModel, getPaginationRowModel, getFilteredRowModel, flexRender, getSortedRowModel } from "@tanstack/react-table";
 import styles from "./styles/dss.css"
 import LibraryTable from "./components/librarytable";
-import tabledata from "./data/table";
-
-const data = tabledata
+import Pagination from "./components/pagination";
+import FolderView from "./components/folderview";
 
 const columns = [
-    {
-        id: 'checkbox',
-        header: "",
-        cell: () => <input type="checkbox"/>,
-        size: 20,
-        enableResizing: false,
-        enableSorting: false,
-    },
-    {
-        id: 'icon',
-        header:  '',
-        cell: '',
-        size: 20,
-        enableResizing: false,
-        enableSorting: false,
-    },
-    {
-        accessorKey: 'title',
-        header: 'Document Title',
-        size: 90,
-    },
-    {
-        accessorKey: 'description',
-        header: 'Document Description',
-        size: 200,
-    },
-    {
-        accessorKey: 'dateAdded',
-        header: 'Date Added',
-        size: 90,
-    },
-    {
-        accessorKey: 'documentDate',
-        header: 'Document Date',
-        size: 90,
-    },
-    {
-        accessorKey: 'size',
-        header: 'Size',
-        size: 50,
-    },
-]
+        {
+            id: 'checkbox',
+            header: "",
+            cell: () => null,
+            size: 20,
+            enableResizing: false,
+            enableSorting: false,
+        },
+        {
+            id: 'icon',
+            header:  '',
+            cell: '',
+            size: 20,
+            enableResizing: false,
+            enableSorting: false,
+        },
+        {
+            accessorKey: 'title',
+            header: 'Document Title',
+            size: 90,
+        },
+        {
+            accessorKey: 'description',
+            header: 'Document Description',
+            size: 200,
+        },
+        {
+            accessorKey: 'dateAdded',
+            header: 'Date Added',
+            size: 90,
+        },
+        {
+            accessorKey: 'documentDate',
+            header: 'Document Date',
+            size: 90,
+        },
+        {
+            accessorKey: 'size',
+            header: 'Size',
+            size: 50,
+        },
+    ]
 
 export default function Page() {
     const [activeTab, setActiveTab] = useState('folder');
     const [columnSizing, setColumnSizing] = useState({});
     const [sorting, setSorting] = useState([]);
+    const [dragMode, setDragMode] = useState(null);
+    const [rowSelection, setRowSelection] = useState({});
+    const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+    const [selectedFolder, setSelectedFolder] = useState([]);
+    const [documents, setDocuments] = useState(null);
+
+    const data = useMemo(
+        () => documents ? getFolderContents(documents, selectedFolder) : [],
+        [documents, selectedFolder]
+    )
+
+    function getFolderContents(tree, path) {
+        let current = tree;
+
+        for (const folder of path) {
+            current = current?.[folder]?.children;
+
+            if (!current) return [];
+        }
+
+        return Object.entries(current)
+        .filter(([_, item]) => item.kind === "file")
+        .map(([name, item]) => ({
+            title: name,
+            path: [...path, name],
+            kind: item.kind,
+            description: item.description ?? "",
+            dateAdded: item.dateAdded ?? "",
+            documentDate: item.documentDate ?? "",
+            size: item.size ?? "",
+            type: item.type ?? "",
+        }));
+    }
+
+    function openSelected() {
+        table.getSelectedRowModel().rows.forEach(row => {
+            const file = row.original;
+            const url = "/library/documents/" + file.path.join("/") + "." + file.type;
+            window.open(url, "_blank");
+        })
+    }
+
+    function downloadSelected() {
+        table.getSelectedRowModel().rows.forEach(row => {
+            const file = row.original;
+
+            const a = document.createElement("a");
+            a.href = "/library/documents/" + file.path.join("/") + "." + file.type;
+            a.download = file.title + "." + file.type;
+            a.click();
+        })
+    }
 
     const table = useReactTable({
         data,
@@ -62,7 +113,9 @@ export default function Page() {
         state: {
             columnSizing,
             sorting,
+            rowSelection
         },
+        onRowSelectionChange: setRowSelection,
         onColumnSizingChange: setColumnSizing,
         onSortingChange: setSorting,
         getCoreRowModel: getCoreRowModel(),
@@ -77,6 +130,20 @@ export default function Page() {
     const pageCount = table.getPageCount();
     const startRow = pageIndex * pageSize + 1;
     const endRow = Math.min((pageIndex + 1) * pageSize, totalRows);
+
+    useEffect(() => {
+        const stopDragging = () => setDragMode(null);
+
+        window.addEventListener("mouseup", stopDragging);
+
+        fetch("/library/documents.json")
+        .then(r => r.json())
+        .then(setDocuments)
+
+        return () => {
+            window.removeEventListener("mouseup", stopDragging);
+        };
+    }, []);
 
     return(
         <>
@@ -95,21 +162,35 @@ export default function Page() {
                         <span>Advanced Search</span>
                     </button>
                 </div>
-                <div className="container">
-                    <div className="DSS">
-                        <span>DSS Library</span>
-                        <button className="collapse">
-                            <img src="/images/collapse-icon.png"/>
-                        </button>
-                    </div>
-                    <div className="Folders">
-                    </div>
+                <div className={`container ${sidebarCollapsed ? 'collapsed' : ''}`}>
+                    {!sidebarCollapsed ? 
+                        <>
+                            <div className="DSS">
+                                <span>DSS Library</span>
+                                <button className="collapse" onClick={() => setSidebarCollapsed(prev => !prev)}>
+                                    <img src="/images/collapse-icon.png"/>
+                                </button>
+                            </div>
+                            <div className="Folders">
+                                <div className={activeTab === "folder" ? "" : "hidden"}>
+                                    <FolderView setRowSelection={setRowSelection} documents={documents} selectedFolder={selectedFolder} setSelectedFolder={setSelectedFolder} />
+                                </div>
+                            </div>
+                        </>
+                        :
+                        <div className="dss-folders-collapsed">
+                            <button className="collapse" onClick={() => setSidebarCollapsed(prev => !prev)}>
+                                <img src="/images/uncollapse-icon.png"/>
+                            </button>
+                        </div>
+                    }
+                    
                     <div className="Actions">
-                        <button className="action">
+                        <button className="action" onClick={openSelected}>
                             <img src="/images/Open.png"/>
                             <span>Open</span>
                         </button>
-                        <button className="action">
+                        <button className="action" onClick={downloadSelected}>
                             <img src="/images/Download.png"/>
                             <span>Download</span>
                         </button>
@@ -119,49 +200,10 @@ export default function Page() {
                         </button>
                     </div>
                     <div className="FolderContent">
-                        <LibraryTable table={table} />
+                        <LibraryTable documents={documents} table={table} dragMode={dragMode} setDragMode={setDragMode} />
                     </div>
                     <div className="PageControls">
-                        <div className="pagination">
-                            <button onClick={() => table.setPageIndex(0)} disabled={!table.getCanPreviousPage()}>
-                                <img src="/images/skipstart.png"/>
-                            </button>
-                            <button onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>
-                                <img src="/images/previous.png"/>
-                            </button>
-                            <span>
-                                Page <input 
-                                    type="number" 
-                                    min="1" 
-                                    max={pageCount}
-                                    value={pageIndex + 1}
-                                    onChange={(e) => table.setPageIndex(Number(e.target.value) - 1)}
-                                    style={{ width: '40px' }}
-                                /> of {pageCount}
-                            </span>
-                            <button onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>
-                                <img src="/images/next.png"/>
-                            </button>
-                            <button onClick={() => table.setPageIndex(pageCount - 1)} disabled={!table.getCanNextPage()}>
-                                <img src="/images/skipend.png"/>
-                            </button>
-                            
-                        </div>
-                        <span className="pageselection">
-                            Displaying 
-                            <select
-                                value={pageSize}
-                                onChange={(e) => table.setPageSize(Number(e.target.value))}
-                                style={{ margin: '0 4px' }}
-                            >
-                                {[10, 20, 50, 100].map((size) => (
-                                    <option key={size} value={size}>
-                                        {size}
-                                    </option>
-                                ))}
-                            </select>
-                            items per page of {totalRows} total
-                        </span>
+                        <Pagination table={table}/> 
                     </div>
                 </div>
             </div>
