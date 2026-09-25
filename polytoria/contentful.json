@@ -1,0 +1,844 @@
+{
+  "sys": {
+    "type": "Array"
+  },
+  "total": 5,
+  "skip": 0,
+  "limit": 100,
+  "items": [
+    {
+      "metadata": {
+        "tags": [],
+        "concepts": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "gano358j4th2"
+          }
+        },
+        "id": "7BjG29bzU2OreYxHLgQdWI",
+        "type": "Entry",
+        "createdAt": "2026-06-04T15:34:59.447Z",
+        "updatedAt": "2026-06-04T15:34:59.447Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 6,
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "news"
+          }
+        },
+        "locale": "en-US"
+      },
+      "fields": {
+        "url": "interatom-powers-first-certified-reactor-operator",
+        "header": "Interatom Power's First Certified Reactor Operator",
+        "subheader": "Celebrating a Milestone in Nuclear Safety and Operational Excellence",
+        "created": "2026-03-28T00:00+07:00",
+        "newscontent": {
+          "nodeType": "document",
+          "data": {},
+          "content": [
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "On 28 March, 2026, Interatom Power celebrated the achievement of its first certified reactor operator. This milestone marks a significant step in the company's commitment to safety, training, and operational excellence in the field of nuclear energy.",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            },
+            {
+              "nodeType": "embedded-asset-block",
+              "data": {
+                "target": {
+                  "sys": {
+                    "id": "5FWOieXHndDkztpcowX2nJ",
+                    "type": "Link",
+                    "linkType": "Asset"
+                  }
+                }
+              },
+              "content": []
+            },
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "The certified reactor operator has undergone extensive training and evaluation to ensure proficiency in managing reactor operations. This certification demonstrates the individual's capability to handle complex scenarios and maintain the highest standards of safety and efficiency.",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            },
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "Interatom Power continues to invest in the development of its workforce, providing ongoing training and professional growth opportunities. The certification of the first reactor operator is a testament to the company's dedication to excellence and its proactive approach to safety and operational standards.",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            },
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "As the company advances its nuclear energy initiatives, the presence of certified reactor operators will play a crucial role in ensuring the safe and efficient operation of its facilities. This achievement underscores Interatom Power's commitment to maintaining the highest levels of expertise and reliability in the industry.",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [],
+        "concepts": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "gano358j4th2"
+          }
+        },
+        "id": "5DL2L9tyWaG582e8Ap6LfZ",
+        "type": "Entry",
+        "createdAt": "2026-06-04T15:33:36.165Z",
+        "updatedAt": "2026-06-04T15:33:36.165Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "news"
+          }
+        },
+        "locale": "en-US"
+      },
+      "fields": {
+        "url": "vogataya-generating-station-completed-installation-of-the-cryostat-lid",
+        "header": "Vogataya Generating Station Completed Installation of the Cryostat Lid",
+        "subheader": "The installation of the cryostat lid marks a significant milestone in the station's operational capabilities.",
+        "created": "2026-04-22T00:00+07:00",
+        "newscontent": {
+          "nodeType": "document",
+          "data": {},
+          "content": [
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "On 22 April, 2026, Vogataya Generating Station successfully completed the installation of the cryostat lid, a critical component in the station's nuclear reactor system. This achievement represents a major milestone in the station's operational capabilities and underscores the commitment to maintaining the highest standards of safety and efficiency.",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            },
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "With the help from ",
+                  "marks": [],
+                  "data": {}
+                },
+                {
+                  "nodeType": "hyperlink",
+                  "data": {
+                    "uri": "https://www.ciemat.es/en/introduccion"
+                  },
+                  "content": [
+                    {
+                      "nodeType": "text",
+                      "value": "CIEMAT",
+                      "marks": [],
+                      "data": {}
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "text",
+                  "value": ", the assembled cryostat lid was carefully positioned and secured, ensuring optimal performance and safety for the reactor. The cryostat lid serves as a crucial barrier, maintaining the integrity of the reactor's internal environment and supporting the overall efficiency of the power generation process.",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            },
+            {
+              "nodeType": "embedded-asset-block",
+              "data": {
+                "target": {
+                  "sys": {
+                    "id": "DSbiYaEhx527OsOf0NvsD",
+                    "type": "Link",
+                    "linkType": "Asset"
+                  }
+                }
+              },
+              "content": []
+            },
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "A 3D render of the cryostat lid, placed in the biological shield.",
+                  "marks": [
+                    {
+                      "type": "italic"
+                    }
+                  ],
+                  "data": {}
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [],
+        "concepts": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "gano358j4th2"
+          }
+        },
+        "id": "6ug1hrbPQTCf0ce6zlnHex",
+        "type": "Entry",
+        "createdAt": "2026-06-04T15:31:25.163Z",
+        "updatedAt": "2026-06-04T15:31:25.163Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 8,
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "news"
+          }
+        },
+        "locale": "en-US"
+      },
+      "fields": {
+        "url": "vogataya-generating-station-welcomes-three-new-nonlicensed-operators",
+        "header": "Vogataya Generating Station Welcomes Three New Nonlicensed Operators",
+        "subheader": "The operators will aid control room operations and enhance plant safety.",
+        "created": "2026-04-19T00:00+07:00",
+        "newscontent": {
+          "nodeType": "document",
+          "data": {},
+          "content": [
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "Vogataya Generating Station, a leading nuclear power facility, is proud to announce the addition of three new nonlicensed operators to its team. These operators will play a crucial role in supporting control room operations and ensuring the continued safety and efficiency of the plant.",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            },
+            {
+              "nodeType": "embedded-asset-block",
+              "data": {
+                "target": {
+                  "sys": {
+                    "id": "1VNRV98cRwqBGqY62C5p6S",
+                    "type": "Link",
+                    "linkType": "Asset"
+                  }
+                }
+              },
+              "content": []
+            },
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "The new nonlicensed operators have undergone rigorous training and have demonstrated exceptional skills in various aspects of plant operations. They will assist licensed operators in monitoring and controlling the plant's systems, contributing to the overall safety and reliability of the facility.",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            },
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "InterATOM Power is committed to maintaining the highest standards of safety and operational excellence at Vogataya Generating Station. The addition of these skilled nonlicensed operators is a testament to our dedication to continuous improvement and our commitment to providing clean, reliable energy to our customers.",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            },
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "We welcome our new team members and look forward to their contributions to the success of Vogataya Generating Station.",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            },
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "It is truly a huge step forward for the operational safety of Vogataya Generating Station to have three fully qualified nonlicensed operators added to our control room crew. We hope the operators will be able to train new staff in the future so we can keep up our commitment to safety, and to continue to operator the plant adhering to written procedures safely and efficiently. stated Lemion, Operations Director of Vogataya Generating Station, Odlezelské Site.",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            },
+            {
+              "nodeType": "paragraph",
+              "data": {},
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "",
+                  "marks": [],
+                  "data": {}
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [],
+        "concepts": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "gano358j4th2"
+          }
+        },
+        "id": "2N2BaV3zQ0xoqYPIZzTPgj",
+        "type": "Entry",
+        "createdAt": "2026-06-04T10:41:14.374Z",
+        "updatedAt": "2026-06-04T10:41:14.374Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 8,
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "news"
+          }
+        },
+        "locale": "en-US"
+      },
+      "fields": {
+        "url": "sawtooth-generating-station-shuts-down-for-a-refueling-outage",
+        "header": "Sawtooth Energy Center Shuts Down for a Refueling Outage",
+        "subheader": "The station temporarily halts operations to perform essential maintenance and refueling activities.",
+        "created": "2026-04-05T00:00+07:00",
+        "newscontent": {
+          "data": {},
+          "content": [
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "On 5 April, 2026, Sawtooth Energy Center temporarily ceased operations to undergo a scheduled refueling outage. This planned shutdown allows for the replacement of spent fuel and the performance of critical maintenance tasks, ensuring the continued safe and efficient operation of the reactor.",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "Many contractors were involved in the refueling process, working diligently to complete the necessary tasks within the planned timeframe. With the help from plant operators, the refueling outage is in progress and is scheduled to finish and return to nominal operations on 8 May, 2026.",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            },
+            {
+              "data": {
+                "target": {
+                  "sys": {
+                    "id": "gUhrtE3PZHMu5hv4FVkZd",
+                    "type": "Link",
+                    "linkType": "Asset"
+                  }
+                }
+              },
+              "content": [],
+              "nodeType": "embedded-asset-block"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "Currently, operations are in the process of shuffling old fuel from the center of the core to the periphery, ensuring a balanced and efficient refueling process. Later on, new fuel will be loaded into the core to resume normal operations, ensuring sufficient fuel supply for continued energy production.",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "During a refueling outage, maintenance in areas normally inaccessible is conducted to ensure the continued safe and efficient operation of the reactor. Technicians monitor the condition of the fuel and other critical components via In-Core Cameras, which provide real-time data to support decision-making and ensure the highest standards of safety. 2000 independent contractors were brought on site to assist with various tasks, highlighting the scale and complexity of the operation.",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            }
+          ],
+          "nodeType": "document"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [],
+        "concepts": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "gano358j4th2"
+          }
+        },
+        "id": "23P5S0ORWdC3D6Y8PEXaGX",
+        "type": "Entry",
+        "createdAt": "2026-06-04T02:08:16.243Z",
+        "updatedAt": "2026-06-04T09:44:51.265Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 8,
+        "revision": 2,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "news"
+          }
+        },
+        "locale": "en-US"
+      },
+      "fields": {
+        "header": "QST Signs Roadmap for Tokamak Installation at Odlezelské Site",
+        "subheader": "The company outlines its plans for the installation of a new tokamak at the Odlezelské site.",
+        "created": "2026-03-28T00:00+07:00",
+        "newscontent": {
+          "data": {},
+          "content": [
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "On 28 March, 2026, QST signed a roadmap for the installation of a new tokamak at the Odlezelské site. This strategic plan outlines the key milestones and objectives for the project, ensuring a structured and efficient approach to the installation process.",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            },
+            {
+              "data": {
+                "target": {
+                  "sys": {
+                    "id": "1ZjGLb473Apn8SaPTeeYMU",
+                    "type": "Link",
+                    "linkType": "Asset"
+                  }
+                }
+              },
+              "content": [],
+              "nodeType": "embedded-asset-block"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "Many contractors and engineers will be involved in the installation process, working diligently to meet the planned milestones. With the support of the project management team, the installation is expected to progress smoothly and achieve its objectives within the scheduled timeframe.",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "Currently, preparations are underway to ensure all necessary components and infrastructure are in place for the tokamak installation. This includes site assessments, equipment procurement, and coordination with various stakeholders to ensure a seamless installation process.",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "During the installation phase, safety and quality control measures will be strictly enforced to ensure the successful completion of the project. Technicians and engineers will monitor the progress closely, providing real-time updates and ensuring adherence to the highest standards of safety and efficiency.",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            },
+            {
+              "data": {},
+              "content": [
+                {
+                  "data": {},
+                  "marks": [],
+                  "value": "",
+                  "nodeType": "text"
+                }
+              ],
+              "nodeType": "paragraph"
+            }
+          ],
+          "nodeType": "document"
+        },
+        "url": "qst-signs-roadmap-for-tokamak-installation-at-odlezelske-site"
+      }
+    }
+  ],
+  "includes": {
+    "Asset": [
+      {
+        "metadata": {
+          "tags": [],
+          "concepts": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "gano358j4th2"
+            }
+          },
+          "id": "1VNRV98cRwqBGqY62C5p6S",
+          "type": "Asset",
+          "createdAt": "2026-06-04T15:14:59.239Z",
+          "updatedAt": "2026-06-04T15:14:59.239Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "publishedVersion": 3,
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "Operators",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/gano358j4th2/1VNRV98cRwqBGqY62C5p6S/bba1775ae2304607e5fa2fb0ce9364e9/Operators.png",
+            "details": {
+              "size": 456696,
+              "image": {
+                "width": 1600,
+                "height": 800
+              }
+            },
+            "fileName": "Operators.png",
+            "contentType": "image/png"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": [],
+          "concepts": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "gano358j4th2"
+            }
+          },
+          "id": "1ZjGLb473Apn8SaPTeeYMU",
+          "type": "Asset",
+          "createdAt": "2026-06-04T02:07:31.498Z",
+          "updatedAt": "2026-06-04T02:07:31.498Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "publishedVersion": 8,
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "Assembly Hall",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/gano358j4th2/1ZjGLb473Apn8SaPTeeYMU/c4de1690ed1ed625750d5e958ad55680/AssemblyHall.png",
+            "details": {
+              "size": 1383846,
+              "image": {
+                "width": 1457,
+                "height": 683
+              }
+            },
+            "fileName": "AssemblyHall.png",
+            "contentType": "image/png"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": [],
+          "concepts": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "gano358j4th2"
+            }
+          },
+          "id": "5FWOieXHndDkztpcowX2nJ",
+          "type": "Asset",
+          "createdAt": "2026-06-04T15:34:51.999Z",
+          "updatedAt": "2026-06-04T15:34:51.999Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "publishedVersion": 3,
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "reactoroperator",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/gano358j4th2/5FWOieXHndDkztpcowX2nJ/fb7661348cef506a2ef2b01c521fb623/reactoroperator.png",
+            "details": {
+              "size": 598344,
+              "image": {
+                "width": 1320,
+                "height": 677
+              }
+            },
+            "fileName": "reactoroperator.png",
+            "contentType": "image/png"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": [],
+          "concepts": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "gano358j4th2"
+            }
+          },
+          "id": "DSbiYaEhx527OsOf0NvsD",
+          "type": "Asset",
+          "createdAt": "2026-06-04T15:33:11.402Z",
+          "updatedAt": "2026-06-04T15:33:11.402Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "publishedVersion": 4,
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "cryostat",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/gano358j4th2/DSbiYaEhx527OsOf0NvsD/144268107ecd041c369dc14608d4eaa0/cryostat.webp",
+            "details": {
+              "size": 367754,
+              "image": {
+                "width": 1446,
+                "height": 581
+              }
+            },
+            "fileName": "cryostat.webp",
+            "contentType": "image/webp"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": [],
+          "concepts": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "gano358j4th2"
+            }
+          },
+          "id": "gUhrtE3PZHMu5hv4FVkZd",
+          "type": "Asset",
+          "createdAt": "2026-06-04T10:39:57.551Z",
+          "updatedAt": "2026-06-04T10:39:57.551Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "publishedVersion": 4,
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "Sawtooth",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/gano358j4th2/gUhrtE3PZHMu5hv4FVkZd/0d611d40cdf1f8514e75100f8b24d0da/Sawtooth.png",
+            "details": {
+              "size": 510959,
+              "image": {
+                "width": 1874,
+                "height": 954
+              }
+            },
+            "fileName": "Sawtooth.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    ]
+  }
+}
