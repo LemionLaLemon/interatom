@@ -10,7 +10,7 @@
       panel.setAttribute("aria-hidden", open ? "true" : "false");
     });
   }
-  var accept = document.querySelector(".cookies .accept");
+  var accept = document.getElementById("cookie-accept");
   var banner = document.getElementById("cookie-banner");
   if (accept && banner) {
     accept.addEventListener("click", function () {
